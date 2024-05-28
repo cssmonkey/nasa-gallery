@@ -8,7 +8,7 @@ type TitleProps = {
     children: ReactNode;
 };
 
-const darkThemeFontColor = "dark:text-white";
+const darkThemeFontColor = "dark:text-gray-100";
 
 const classes: Record<HeadingLevel, string> = {
     h1: `text-5xl font-extrabold ${darkThemeFontColor}`,

@@ -16,7 +16,7 @@ const Card: FC<CardProps> = ({
     const HeadingComponent = headingLevel;
     return (
         <div
-            className={`border rounded border-gray-300 bg-white drop-shadow ${customClass}`}
+            className={`border rounded border-gray-300 bg-white dark:bg-slate-800 drop-shadow ${customClass}`}
         >
             <div className="border-b border-gray-300 p-4 ">
                 <HeadingComponent className="card-title">

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center gap-8 p-24">
-            <Title>Nasa image galleries</Title>
+            <Title>NASA image galleries</Title>
             <div className="w-full max-w-5xl items-center justify-between flex gap-4">
                 <Card heading="🌍 Earth" customClass="flex-1">
                     <Link href="/earth">
