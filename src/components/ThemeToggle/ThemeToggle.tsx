@@ -14,16 +14,16 @@ const ThemeToggle: FC = () => {
 
     if (!mounted) return null;
 
+    const emoji = theme === "light" ? "☀️" : "🌙";
+
+    const onSwitchChanges = () => {
+        const newThemeVal = theme === "light" ? "dark" : "light";
+        setTheme(newThemeVal);
+    };
+
     return (
-        <Switch
-            color="default"
-            size="sm"
-            onChange={() => {
-                const newThemeVal = theme === "light" ? "dark" : "light";
-                setTheme(newThemeVal);
-            }}
-        >
-            Theme
+        <Switch color="default" size="sm" onChange={onSwitchChanges}>
+            {emoji} Theme
         </Switch>
     );
 };
