@@ -4,7 +4,7 @@ import { FC } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const AppHeader: FC = () => (
-    <div className="border-b border-gray-300 bg-white dark:bg-slate-800 drop-shadow">
+    <div className="border-b border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 drop-shadow">
         <div className="max-w-8xl mx-auto">
             <div className="px-8 py-4 flex justify-between">
                 <Link
