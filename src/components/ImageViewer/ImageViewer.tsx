@@ -25,9 +25,9 @@ const ImageViewer: FC<ImageViewerProps> = ({
                     <div className="w-3/6 relative">
                         <Image
                             src={imageUrl}
-                            className="p-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 drop-shadow"
-                            fill
+                            className="object-contain p-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 drop-shadow"
                             alt={title}
+                            fill
                         />
                     </div>
                 )}

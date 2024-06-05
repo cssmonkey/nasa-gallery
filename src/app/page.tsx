@@ -2,7 +2,10 @@ import Card from "@/components/Card/Card";
 import Title from "@/components/Title/Title";
 import Link from "next/link";
 
+import { getTodaysDate } from "@/utilities/format-date";
+
 export default function Home() {
+    const today = getTodaysDate();
     return (
         <main className="flex min-h-screen flex-col items-center gap-8 p-24">
             <Title>NASA image galleries</Title>
@@ -17,7 +20,7 @@ export default function Home() {
                     heading="💫 Astronomy picture of the day"
                     customClass="flex-1"
                 >
-                    <Link href="/picture-of-the-day">
+                    <Link href={`/picture-of-the-day/${today}`}>
                         View images
                         <span className="sr-only">
                             from Astronomy Picture of the day

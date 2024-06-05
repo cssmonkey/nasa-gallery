@@ -7,6 +7,7 @@ type TitleProps = {
     level?: HeadingLevel;
     className?: string;
     children: ReactNode;
+    endContent?: ReactNode;
 };
 
 const darkThemeFontColor = "dark:text-gray-100";
@@ -20,12 +21,20 @@ const classes: Record<HeadingLevel, string> = {
     h6: `text-lg mb-2 font-bold ${darkThemeFontColor}`,
 };
 
-const Title: FC<TitleProps> = ({ level = "h1", className = "", children }) => {
+const Title: FC<TitleProps> = ({
+    level = "h1",
+    className = "",
+    children,
+    endContent,
+}) => {
     const customClass = `${classes[level]} ${className}`;
     const Component = level;
     return (
         <>
-            <Component className={customClass}>{children}</Component>
+            <div className="flex items-baseline justify-between">
+                <Component className={customClass}>{children}</Component>
+                {endContent}
+            </div>
             {level === "h1" && <Divider className="mb-6" />}
         </>
     );
