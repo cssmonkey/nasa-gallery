@@ -1,5 +1,5 @@
 import DatePicker from "@/components/DatePicker/DatePicker";
-import ImageViewer from "@/components/ImageViewer/ImageViewer";
+import MediaViewer from "@/components/MediaViewer/MediaViewer";
 import Title from "@/components/Title/Title";
 import { makeRequest } from "@/utilities/api";
 import { DateFormat } from "@/utilities/format-date";
@@ -45,16 +45,13 @@ export default async function PictureOfTheDay({
                 Picture of the day
             </Title>
 
-            {data.media_type === "image" ? (
-                <ImageViewer
-                    title={data.title}
-                    text={data.explanation}
-                    imageUrl={data.url}
-                    copyright={data.copyright}
-                />
-            ) : (
-                <p>render video</p>
-            )}
+            <MediaViewer
+                title={data.title}
+                text={data.explanation}
+                url={data.url}
+                copyright={data.copyright}
+                mediaType={data.media_type}
+            />
         </main>
     );
 }
