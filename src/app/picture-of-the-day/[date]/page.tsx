@@ -1,3 +1,4 @@
+import CalendarModal from "@/components/CalendarModal/CalendarModal";
 import DatePicker from "@/components/DatePicker/DatePicker";
 import MediaViewer from "@/components/MediaViewer/MediaViewer";
 import Title from "@/components/Title/Title";
@@ -40,8 +41,8 @@ export default async function PictureOfTheDay({
     const data = await getPictureOfTheDay(params.date);
 
     return (
-        <main className="flex min-h-screen flex-col gap-4 px-8 py-24">
-            <Title endContent={<DatePicker date={params.date} />}>
+        <>
+            <Title endContent={<CalendarModal selectedDate={params.date} />}>
                 Picture of the day
             </Title>
 
@@ -52,6 +53,6 @@ export default async function PictureOfTheDay({
                 copyright={data.copyright}
                 mediaType={data.media_type}
             />
-        </main>
+        </>
     );
 }

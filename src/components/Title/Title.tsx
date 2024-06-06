@@ -31,7 +31,7 @@ const Title: FC<TitleProps> = ({
     const Component = level;
     return (
         <>
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-center justify-between">
                 <Component className={customClass}>{children}</Component>
                 {endContent}
             </div>

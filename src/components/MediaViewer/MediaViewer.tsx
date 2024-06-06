@@ -13,6 +13,28 @@ type MediaViewerProps = {
     children?: ReactNode;
 };
 
+const renderMedia = (
+    mediaType: "video" | "image",
+    title: string,
+    url: string
+) => {
+    switch (mediaType) {
+        case "image": {
+            return (
+                <Image
+                    src={url}
+                    className="object-contain p-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 drop-shadow"
+                    alt={title}
+                    fill
+                />
+            );
+        }
+        case "video": {
+            return <VideoEmbed url={url} />;
+        }
+    }
+};
+
 const MediaViewer: FC<MediaViewerProps> = ({
     title,
     copyright,
@@ -21,27 +43,12 @@ const MediaViewer: FC<MediaViewerProps> = ({
     text,
     children,
 }) => {
-    const renderMedia = () => {
-        switch (mediaType) {
-            case "image": {
-                return (
-                    <Image
-                        src={url}
-                        className="object-contain p-4 border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 drop-shadow"
-                        alt={title}
-                        fill
-                    />
-                );
-            }
-            case "video": {
-                return <VideoEmbed url={url} />;
-            }
-        }
-    };
     return (
         <>
             <div className="mx-auto max-w-8xl flex flex-row gap-6 flex-1">
-                <div className="w-3/6 relative">{renderMedia()}</div>
+                <div className="w-3/6 relative">
+                    {renderMedia(mediaType, title, url)}
+                </div>
                 <div className="flex-1 space-y-4">
                     <Title level="h2">{title}</Title>
                     <p>{text}</p>
