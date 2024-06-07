@@ -3,21 +3,18 @@ import Title from "@/components/Title/Title";
 import Image from "next/image";
 import { Divider } from "@nextui-org/react";
 import VideoEmbed from "../VideoEmbed/VideoEmbed";
+import { MediaType } from "@/types";
 
 type MediaViewerProps = {
     title: string;
     copyright?: string;
-    mediaType: "video" | "image";
+    mediaType: MediaType;
     url: string;
     text: string;
     children?: ReactNode;
 };
 
-const renderMedia = (
-    mediaType: "video" | "image",
-    title: string,
-    url: string
-) => {
+const renderMedia = (mediaType: MediaType, title: string, url: string) => {
     switch (mediaType) {
         case "image": {
             return (

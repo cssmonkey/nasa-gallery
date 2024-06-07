@@ -1,7 +1,7 @@
 import CalendarModal from "@/components/CalendarModal/CalendarModal";
-import DatePicker from "@/components/DatePicker/DatePicker";
 import MediaViewer from "@/components/MediaViewer/MediaViewer";
 import Title from "@/components/Title/Title";
+import { MediaType } from "@/types";
 import { makeRequest } from "@/utilities/api";
 import { DateFormat } from "@/utilities/format-date";
 
@@ -12,7 +12,7 @@ type ImageData = {
     copyright: string;
     explanation: string;
     date: string;
-    media_type: "image" | "video";
+    media_type: MediaType;
 };
 
 type Reponse = ImageData;

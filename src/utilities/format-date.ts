@@ -1,5 +1,4 @@
-
-export type DateFormat = `${string}-${string}-${string}`;
+import { DateFormat } from "@/types";
 
 export const getFormattedDate = (date: Date): DateFormat => {
   let day = `${(date.getDate())}`.padStart(2, '0');
