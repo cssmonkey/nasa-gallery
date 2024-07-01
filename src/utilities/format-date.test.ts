@@ -7,5 +7,5 @@ describe("getFormattedDate", () => {
     const formattedDate = getFormattedDate(date);
 
     expect(formattedDate).toBe("12-05-2020");
-  })
+  });
 })

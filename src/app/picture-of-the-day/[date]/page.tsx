@@ -1,9 +1,8 @@
 import CalendarModal from "@/components/CalendarModal/CalendarModal";
 import MediaViewer from "@/components/MediaViewer/MediaViewer";
 import Title from "@/components/Title/Title";
-import { MediaType } from "@/types";
+import { MediaType, DateFormat } from "@/types";
 import { makeRequest } from "@/utilities/api";
-import { DateFormat } from "@/utilities/format-date";
 
 type ImageData = {
     url: string;
